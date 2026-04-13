@@ -1559,7 +1559,6 @@ partie qui fait le icone-1-1 - 4-4 soit responsive
 
 @media (max-width:325px) {
 
-
   #icône-1-1 {
     color: var(--allsection-after-icone1-color);
   }
@@ -1597,6 +1596,15 @@ partie qui fait le icone-1-1 - 4-4 soit responsive
   font-size: 15px;
   margin-bottom: 0;
   color: black;
+}
+
+.features-cards .feature-box li {
+  font-size: 15px;
+}
+
+.features-cards .feature-box h6 {
+  font-size: 16px;
+  margin-top: 1%;
 }
 
 .features-cards .feature-box a {
