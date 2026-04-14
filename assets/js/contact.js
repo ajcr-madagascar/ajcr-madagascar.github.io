@@ -9,7 +9,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
     message: document.querySelector("[name=message]").value
   };
   try {
-    const response = await fetch("/contact",
+    const response = await fetch("mon-serveur-production-8d65.up.railway.app",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
