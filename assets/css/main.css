@@ -20,7 +20,7 @@
   /* Default color used for the majority of the text content across the entire website */
   --heading-color: #2d465e;
   /* Color for headings, subheadings and title throughout the website */
-  --accent-color: linear-gradient(135deg, #3b82f6, #6df5c1);
+  --accent-color: linear-gradient(135deg, #2675f5, #3ff0ad);
   --accent-color-2: #3b82f6;
   /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff;
