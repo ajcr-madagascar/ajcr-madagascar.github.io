@@ -1,32 +1,32 @@
-/**
-* Template Name: AJCR
+/*
+* nom : AJCR
 */
 
 /*--------------------------------------------------------------
-# Font & Color Variables
+# Font & Couleur (Variables)
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito", sans-serif;
-  --nav-font: "Inter", sans-serif;
+  --default-font: "Inter", system-ui, -apple-system, Arial, sans-serif;
+  --heading-font:  "Inter", system-ui, -apple-system, Arial, sans-serif;
+  --nav-font:  "Inter", system-ui, -apple-system, Arial, sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* l'ensemble des variables couleurs du site web ajcr */
 :root {
   --background-color: #ffffff;
-  /* Background color for the entire website, including individual sections */
+  /* Background color du site ainsi que celui des sections */
   --default-color: #212529;
-  /* Default color used for the majority of the text content across the entire website */
+  /* couleur par défaut de certains text du site web */
   --heading-color: #2d465e;
-  /* Color for headings, subheadings and title throughout the website */
+  /* Couleur des boutons de certains texte du site web */
   --accent-color: linear-gradient(135deg, #2675f5, #3ff0ad);
   --accent-color-2: #3b82f6;
-  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  /* couleur de certains boutons, liens, et autre élément */
   --surface-color: #ffffff;
-  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  /* la couleur des background des élément, icon des box, des cards, et autre élément du site */
   --contrast-color: #ffffff;
-  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  /* la couleur des sections à propsos du site du texte et du soulignement */
   --allsection-after-icone1-color: rgba(255, 166, 0, 0.434);
   --allsection-after-icone2-color: rgba(12, 99, 221, 0.434);
   --allsection-after-icone3-color: rgba(0, 128, 0, 0.434);
@@ -34,23 +34,23 @@
   /* couleur des icônes et de la barre en bas de la déscription   */
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* couleur de la barre de navigations du site  */
 :root {
   --nav-color: #212529;
-  /* The default color of the main navmenu links */
+  /* couleur par défaut du main et des liens du menu de navigation */
   --nav-hover-color: #0d83fd;
-  /* Applied to main navmenu links when they are hovered over or active */
+  /* couleur appliquer aux liens du barre de navigation aprés le hover ou active */
   --nav-mobile-background-color: #ffffff;
-  /* Used as the background color for mobile navigation menu */
+  /* couleur du background pour la barre de navigation sur mobile */
   --nav-dropdown-background-color: #ffffff;
-  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  /* background color utiliser pour les dropdown items aprés le hover */
   --nav-dropdown-color: #212529;
-  /* Used for navigation links of the dropdown items in the navigation menu. */
+  /* couleur utilisé pour le lien du dropdown dans le menu de navigation */
   --nav-dropdown-hover-color: #0d83fd;
-  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  /*  --nav-hover-color, couleur appliqué aux lien aprés le hover. */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/*couleur appliqué aux sections etc. */
 
 .light-background {
   --background-color: #f3f9ff;
@@ -71,7 +71,7 @@
 }
 
 /*--------------------------------------------------------------
-# General Styling & Shared Classes
+# style genéral & Classes commun
 --------------------------------------------------------------*/
 
 body {
@@ -102,7 +102,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Global Header
+# Header global
 --------------------------------------------------------------*/
 .header {
   --background-color: rgba(255, 255, 255, 0);
@@ -485,7 +485,6 @@ h6 {
   font-size: 14px;
   font-family: var(--heading-font);
 }
-
 
 @media (max-width:768px) {
   .social-links {
@@ -1649,7 +1648,6 @@ partie qui fait le icone-1-1 - 4-4 soit responsive
   color: #f28484;
 }
 
-
 /*--------------------------------------------------------------
 # Features 2 Section
 --------------------------------------------------------------*/
@@ -2099,7 +2097,6 @@ partie qui fait le icone-1-1 - 4-4 soit responsive
   transform: translateX(5px);
 }
 
-
 /* responsive pour les écrans de téléphone */
 @media(max-width:553px) {
   .services .service-card {
@@ -2151,7 +2148,6 @@ partie qui fait le icone-1-1 - 4-4 soit responsive
 }
 
 /* fin de la responsive */
-
 /*--------------------------------------------------------------
 # Section Actions
 --------------------------------------------------------------*/
