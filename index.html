@@ -49,12 +49,11 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div
-      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  <header id="header" class="header fixed-top">
+    <div class="header-container container-fluid container-xl">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="Nom-du-site"><span id="A">A</span>JCR</h1>
+      <a href="index.html" class="logo me-auto me-xl-0">
+        <img class="navbar-image" src="assets/img/ajcr2.png" alt="">
       </a>
 
       <nav id="Menu-de-navigation" class="Menu-de-navigation">
@@ -85,7 +84,7 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="https://forms.gle/XsCxbrKnExZRvkuF6">ADHÉRER</a>
+      <a class="btn-adhérer" id="btn-adhérer" href="https://forms.gle/XsCxbrKnExZRvkuF6">ADHÉRER</a>
     </div>
   </header>
 
@@ -115,6 +114,14 @@
       </div>
     </div>
     <!-- fin du modale -->
+    <!-- icône loader -->
+    <div id="loader">
+      <img src="loading-icon.png" alt="loading" class="loader-img">
+    </div>
+    <!-- notification dans aprés le loader -->
+    <div id="notification" class="notif hidden"></div>
+    <!-- fin de la notification -->
+    <!-- fin de l'icône loader -->
     <!-- Section Accueil -->
     <section id="hero" class="hero section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -472,7 +479,7 @@
             <!-- Début collage L'AJCR -->
             <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
               <div class="phone-mockup text-center">
-                <img src="assets/img/phone-app-screen.png" alt="" class="img-fluid glightbox">
+                <img src="assets/img/AJCR.png" alt="" class="img-fluid glightbox">
               </div>
             </div>
             <!-- la fin de l'image collage de l'AJCR -->
@@ -655,16 +662,40 @@
       </div>
       <!-- fin de la section : titre de la section -->
       <div class="container">
+
         <div class="row g-5">
           <!-- Début Partie 1 témoignages -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="testimonial-item">
+              <svg class="quote-bg" xmlns="http://www.w3.org/2000/svg" viewBox="220 152 180 630"><!--!Font Awesome Free
+                  v7.2.0 by @fontawesome - https://fontawesome.com License -
+                  https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <defs>
+                  <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b82f6" />
+                    <stop offset="100%" stop-color="#6df5c1" />
+                  </linearGradient>
+                </defs>
+                <defs>
+                  <filter id="blurArea" x1="10%" y1="0%">
+                    <feGaussianBlur stdDeviation="1" />
+                  </filter>
+                </defs>
+                <path d="M544
+                  360C544 426.3 490.3 480 424 480L416 480C398.3 480 384 465.7 384 448C384 430.3 398.3
+                  416 416 416L424 416C454.9 416 480 390.9 480 360L480 352L416 352C380.7 352 352 323.3
+                  352 288L352 224C352 188.7 380.7 160 416 160L480 160C515.3 160 544 188.7 544 224L544
+                  360zM288 360C288 426.3 234.3 480 168 480L160 480C142.3 480 128 465.7 128 448C128
+                  430.3 142.3 416 160 416L168 416C198.9 416 224 390.9 224 360L224 352L160 352C124.7 352
+                  96 323.3 96 288L96 224C96 188.7 124.7 160 160 160L224 160C259.3 160 288 188.7 288
+                  224L288 360z" fill="url(#blobGradient)" filter="url(#blurArea)" />
+              </svg>
               <img src="assets/img/témoignages/Rabenilaina Safidy Antonio.jpg" class="testimonial-img" alt="">
               <h3>Rabenilaina Safidy Antonio</h3>
               <h4>Président</h4>
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                A travers l'AJCR, j'ai eu des expériences que mille livres de leadership ne m'aurait pas donné en
+                À travers l'AJCR, j'ai eu des expériences que mille livres de leadership ne m'aurait pas donné en
                 un an. Ces expériences vécues avec tous mes compagnons d'engagement m'ont forgé et m'ont poussé à plus
                 acter pour que tout le monde puisse sourire dans un monde ou le combat doit être mené dans la
                 fratérnité. Cette année au sein de l'association m'a fait comprendre : l'humanité, l'humilité, la
@@ -685,8 +716,31 @@
           <!-- Début Partie 2 témoignages -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
             <div class="testimonial-item">
+              <svg class="quote-bg" xmlns="http://www.w3.org/2000/svg" viewBox="220 152 180 630"><!--!Font Awesome Free
+                  v7.2.0 by @fontawesome - https://fontawesome.com License -
+                  https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <defs>
+                  <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b82f6" />
+                    <stop offset="100%" stop-color="#6df5c1" />
+                  </linearGradient>
+                </defs>
+                <defs>
+                  <filter id="blurArea" x1="10%" y1="0%">
+                    <feGaussianBlur stdDeviation="4" />
+                  </filter>
+                </defs>
+                <path d="M544
+                  360C544 426.3 490.3 480 424 480L416 480C398.3 480 384 465.7 384 448C384 430.3 398.3
+                  416 416 416L424 416C454.9 416 480 390.9 480 360L480 352L416 352C380.7 352 352 323.3
+                  352 288L352 224C352 188.7 380.7 160 416 160L480 160C515.3 160 544 188.7 544 224L544
+                  360zM288 360C288 426.3 234.3 480 168 480L160 480C142.3 480 128 465.7 128 448C128
+                  430.3 142.3 416 160 416L168 416C198.9 416 224 390.9 224 360L224 352L160 352C124.7 352
+                  96 323.3 96 288L96 224C96 188.7 124.7 160 160 160L224 160C259.3 160 288 188.7 288
+                  224L288 360z" fill="url(#blobGradient)" filter="url(#blurArea)" />
+              </svg>
               <img src="assets/img/témoignages/LOVANIAINA Gaël.jpg" class="testimonial-img" alt="">
-              <h3>LOVANIAINA Gaël</h3>
+              <h3><br> LOVANIAINA Gaël</h3>
               <h4>Coordonnateur Général</h4>
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
@@ -713,6 +767,29 @@
           <!-- Début Partie 3 témoignages -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
             <div class="testimonial-item">
+              <svg class="quote-bg" xmlns="http://www.w3.org/2000/svg" viewBox="220 152 180 630"><!--!Font Awesome Free
+                  v7.2.0 by @fontawesome - https://fontawesome.com License -
+                  https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                <defs>
+                  <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b82f6" />
+                    <stop offset="100%" stop-color="#6df5c1" />
+                  </linearGradient>
+                </defs>
+                <defs>
+                  <filter id="blurArea" x1="10%" y1="0%">
+                    <feGaussianBlur stdDeviation="4" />
+                  </filter>
+                </defs>
+                <path d="M544
+                  360C544 426.3 490.3 480 424 480L416 480C398.3 480 384 465.7 384 448C384 430.3 398.3
+                  416 416 416L424 416C454.9 416 480 390.9 480 360L480 352L416 352C380.7 352 352 323.3
+                  352 288L352 224C352 188.7 380.7 160 416 160L480 160C515.3 160 544 188.7 544 224L544
+                  360zM288 360C288 426.3 234.3 480 168 480L160 480C142.3 480 128 465.7 128 448C128
+                  430.3 142.3 416 160 416L168 416C198.9 416 224 390.9 224 360L224 352L160 352C124.7 352
+                  96 323.3 96 288L96 224C96 188.7 124.7 160 160 160L224 160C259.3 160 288 188.7 288
+                  224L288 360z" fill="url(#blobGradient)" filter="url(#blurArea)" />
+              </svg>
               <img src="assets/img/témoignages/RAKOTONIRINA Alain Sedra.jpg" class="testimonial-img" alt="">
               <h3>RAKOTONIRINA Alain Sedra</h3>
               <h4>Responsable Communication externe</h4>
@@ -922,7 +999,13 @@
             <!-- Partenariat-->
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
               <div class="Mobilisation-card">
-                <div class="popular-badge-0"><i class="bi bi-building-fill"></i></div>
+                <div class="popular-badge-0">
+                  <svg class="svg-icon-1" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                    <path fill="#fff"
+                      d="M300.9 149.2L184.3 278.8C179.7 283.9 179.9 291.8 184.8 296.7C215.3 327.2 264.8 327.2 295.3 296.7L327.1 264.9C331.3 260.7 336.6 258.4 342 258C348.8 257.4 355.8 259.7 361 264.9L537.6 440L608 384L608 96L496 160L472.2 144.1C456.4 133.6 437.9 128 418.9 128L348.5 128C347.4 128 346.2 128 345.1 128.1C328.2 129 312.3 136.6 300.9 149.2zM148.6 246.7L255.4 128L215.8 128C190.3 128 165.9 138.1 147.9 156.1L144 160L32 96L32 384L188.4 514.3C211.4 533.5 240.4 544 270.3 544L286 544L279 537C269.6 527.6 269.6 512.4 279 503.1C288.4 493.8 303.6 493.7 312.9 503.1L353.9 544.1L362.9 544.1C382 544.1 400.7 539.8 417.7 531.8L391 505C381.6 495.6 381.6 480.4 391 471.1C400.4 461.8 415.6 461.7 424.9 471.1L456.9 503.1L474.4 485.6C483.3 476.7 485.9 463.8 482 452.5L344.1 315.7L329.2 330.6C279.9 379.9 200.1 379.9 150.8 330.6C127.8 307.6 126.9 270.7 148.6 246.6z" />
+                  </svg>
+                </div>
                 <div class="price">
                   <span class="amount">Devenir partenaire</span>
                 </div>
@@ -1065,7 +1148,7 @@
               <!-- fin -->
               <!-- Début -->
               <div class="faq-item">
-                <h3>Comment devenir partenaire ou sponsor de l'association</h3>
+                <h3>Comment devenir partenaire ou sponsor de l'association?</h3>
                 <div class="faq-content">
                   <p>Pour devenir partenaire ou sponsor de l'AJCR, consultez notre section <a href="#Avec-nous"
                       class="span-déscription">avec
@@ -1086,6 +1169,7 @@
     <!-- fin de la section FAQ-->
     <!-- Section : Ressources -->
     <section id="Ressources" class="Ressources section dark-background">
+      <img src="assets/img/pexels-leeloothefirst-8970649.jpg" alt="">
       <div class="text-center">
         <div class="container">
           <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
@@ -1125,7 +1209,7 @@
               <!-- partie adresse -->
               <div class="info-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box">
-                  <i class="bi bi-geo-alt"></i>
+                  <i class="bi bi-geo-alt-fill"></i>
                 </div>
                 <div class="content">
                   <h4>Notre adresse</h4>
@@ -1137,7 +1221,7 @@
               <!-- partie téléphone -->
               <div class="info-item" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box">
-                  <i class="bi bi-telephone"></i>
+                  <i class="bi bi-telephone-fill"></i>
                 </div>
                 <div class="content">
                   <h4>Téléphone</h4>
@@ -1148,7 +1232,7 @@
               <!-- partie adresse e-mail-->
               <div class="info-item" data-aos="fade-up" data-aos-delay="500">
                 <div class="icon-box">
-                  <i class="bi bi-envelope"></i>
+                  <i class="bi bi-envelope-fill"></i>
                 </div>
                 <div class="content">
                   <h4>Adresse e-mail</h4>
@@ -1211,7 +1295,7 @@
       <div class="row gy-4">
         <!-- début -->
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="index.html" class="logo">
             <span class="Nom-du-site">AJCR</span>
           </a>
           <div class="footer-contact pt-3">
@@ -1220,7 +1304,7 @@
             <p class="mt-3"><strong>Phone : </strong><span>+261 38 13 268 96</span></p>
             <p><strong>Email : </strong><span>ajcrmadagascar@gmail.com</span></p>
           </div>
-          <div class="social-links d-flex mt-4">
+          <div class="social-links mt-4">
             <a href="https://www.facebook.com/AJCRMADAGASCAR"><i class="bi bi-facebook"></i></a>
             <a href="https://github.com/ajcrmadagascar-prog"><i class="bi bi-github"></i></a>
           </div>
@@ -1276,15 +1360,14 @@
       </div>
     </div>
     <!-- début -->
-    <div class="container copyright text-center mt-4">
+    <div class="container copyright mt-4">
       <p>© <span>2026</span> <strong class="px-1 Nom-du-site">AJCR.</strong> <span>Tous droits réservés.</span></p>
     </div>
     <!-- fin -->
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- fichier bootstrap js -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

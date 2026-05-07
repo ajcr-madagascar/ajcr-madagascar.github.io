@@ -20,7 +20,7 @@ Name: AJCR (Association des jeunes citoyens responsables)
 
   /**
    * Mobile nav toggle 
-   * (mune mobile) ou bouton pour ouvrir/fermer la navigation mobile
+   * (menu mobile) ou bouton pour ouvrir/fermer la navigation mobile
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
@@ -42,7 +42,6 @@ Name: AJCR (Association des jeunes citoyens responsables)
         mobileNavToogle();
       }
     });
-
   });
 
   /**
@@ -228,5 +227,24 @@ document.querySelectorAll('[data-bs-toggle="tab"]').forEach(link => {
   });
 });
 
+/* apparition et disparition de la section modal */
+/* const bi_x = document.getElementsByClassName('bi-x');
+const bi_list = document.getElementsByClassName('bi-list');
+const adhérer = document.getElementsById('btn-adhérer');
+if (document.getElementById('btn-adhérer')) {
+  bi_list.addEventListener('click', () => {
+    adhérer.style.display = 'none'; // Affiche la modale
+  });
+  bi_x.addEventListener('click', () => {
+    adhérer.style.display = 'block'; // ferme la modale
+  });
+}
+ */
 /* dans la page section celui qui gére swiper */
 const swiper = new Swiper('.swiper', { autoplay: { delay: 3000, }, loop: true, });
+/* le code quie gére le fais que le site devient une app ( écran d'accueil) */
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js");
+  });
+}

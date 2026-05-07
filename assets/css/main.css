@@ -8,8 +8,8 @@
 /* Fonts */
 :root {
   --default-font: "Inter", system-ui, -apple-system, Arial, sans-serif;
-  --heading-font:  "Inter", system-ui, -apple-system, Arial, sans-serif;
-  --nav-font:  "Inter", system-ui, -apple-system, Arial, sans-serif;
+  --heading-font: "Inter", system-ui, -apple-system, Arial, sans-serif;
+  --nav-font: "Inter", system-ui, -apple-system, Arial, sans-serif;
 }
 
 /* l'ensemble des variables couleurs du site web ajcr */
@@ -105,19 +105,26 @@ h6 {
 # Header global
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  align-items: center;
+  --background-color: rgb(255, 255, 255);
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0;
   transition: all 0.5s;
   z-index: 997;
 }
 
 .header .header-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: var(--surface-color);
-  border-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   padding: 5px 25px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .scrolled .header .header-container {
@@ -125,13 +132,16 @@ h6 {
 }
 
 .header .logo {
+  display: flex;
+  align-items: center;
   line-height: 1;
   padding-left: 5px;
 }
 
 .header .logo img {
-  max-height: 36px;
-  margin-right: 8px;
+  max-height: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .header .logo h1 {
@@ -141,8 +151,8 @@ h6 {
   color: var(--heading-color);
 }
 
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
+.header .btn-adhérer,
+.header .btn-adhérer:focus {
   color: var(--contrast-color);
   background: var(--accent-color);
   font-size: 14px;
@@ -152,8 +162,8 @@ h6 {
   transition: 0.3s;
 }
 
-.header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
+.header .btn-adhérer:hover,
+.header .btn-adhérer:focus:hover {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color-2), transparent 15%);
 }
@@ -266,12 +276,10 @@ h6 {
     left: -100%;
     visibility: visible;
   }
+
 }
 
 @media (max-width: 1199px) {
-  .header {
-    padding-top: 10px;
-  }
 
   .header .header-container {
     margin-left: 10px;
@@ -283,10 +291,14 @@ h6 {
     order: 1;
   }
 
-  .header .btn-getstarted {
+  .header .btn-adhérer {
+    position: absolute;
     order: 2;
-    margin: 0 10px 0 0;
+    right: 55px;
+    margin: 0;
     padding: 6px 15px;
+    display: block;
+    z-index: 9999;
   }
 
   .header .Menu-de-navigation {
@@ -314,15 +326,19 @@ h6 {
     display: none;
     list-style: none;
     position: absolute;
-    inset: 60px 20px 20px 20px;
-    padding: 10px 0;
+    inset: 69px 0px 0px 0px;
+    padding: 0;
     margin: 0;
-    border-radius: 6px;
     background-color: var(--nav-mobile-background-color);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .Menu-de-navigation ul li {
+    background: linear-gradient(color-mix(in srgb, var(--accent-color-2), transparent 95%) 100%, color-mix(in srgb, var(--accent-color-2), transparent 98%) 25%, transparent 50%);
+    border-radius: 5px;
+    margin: 2%;
   }
 
   .Menu-de-navigation a,
@@ -349,8 +365,8 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    transition: 0.3s;
+    border-radius: 10px;
+    transition: 0.8s;
     background: color-mix(in srgb, var(--accent-color), transparent 90%);
   }
 
@@ -377,21 +393,19 @@ h6 {
     position: static;
     display: none;
     z-index: 99;
-    padding: 10px 0;
-    margin: 10px 20px;
     background-color: var(--nav-dropdown-background-color);
     border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     box-shadow: none;
     transition: all 0.5s ease-in-out;
   }
 
-  .Menu-de-navigation .dropdown ul ul {
-    background-color: rgba(33, 37, 41, 0.1);
-  }
-
   .Menu-de-navigation .dropdown>.dropdown-active {
     display: block;
-    background-color: rgba(33, 37, 41, 0.03);
+    border: none;
+  }
+
+  .Menu-de-navigation .dropdown>.dropdown-active li {
+    margin: 2% 0 0;
   }
 
   .mobile-nav-active {
@@ -399,11 +413,10 @@ h6 {
   }
 
   .mobile-nav-active .mobile-nav-toggle {
-    color: #fff;
     position: absolute;
     font-size: 32px;
-    top: 15px;
-    right: 15px;
+    top: 18px;
+    right: 23px;
     margin-right: 0;
     z-index: 9999;
   }
@@ -412,7 +425,7 @@ h6 {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    background: rgba(33, 37, 41, 0.8);
+    background: rgba(255, 255, 255, 0);
     transition: 0.3s;
   }
 
@@ -435,12 +448,18 @@ h6 {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.144);
 }
 
+.social-links{
+  display: flex;
+}
+
 @media (max-width:1024px) {
   .footer-top {
     text-align: left;
   }
 
   .footer .footer-about .logo {
+    display: flex;
+    align-items: center;
     justify-content: left;
   }
 
@@ -468,11 +487,6 @@ h6 {
   margin-bottom: 25px;
 }
 
-.footer .footer-about .logo img {
-  max-height: 40px;
-  margin-right: 6px;
-}
-
 .footer .footer-about .logo span {
   color: var(--heading-color);
   font-family: var(--heading-font);
@@ -488,6 +502,7 @@ h6 {
 
 @media (max-width:768px) {
   .social-links {
+    display: flex;
     align-items: center;
     justify-content: center;
   }
@@ -560,6 +575,7 @@ h6 {
 }
 
 .footer .copyright {
+  text-align: center;
   padding: 25px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
@@ -577,6 +593,9 @@ h6 {
 # boutton Scroll Top 
 --------------------------------------------------------------*/
 .scroll-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   visibility: hidden;
   opacity: 0;
@@ -1356,9 +1375,9 @@ ol {
   }
 
   .features .tab-pane h3:after {
-    left: 45%;
+    left: 50%;
+    transform: translateX(-50%);
   }
-
 }
 
 /* la fin du responsive de h3 et le h3:after */
@@ -1670,6 +1689,10 @@ partie qui fait le icone-1-1 - 4-4 soit responsive
   width: 30px;
 }
 
+.svg-icon-1 {
+  width: 35px;
+}
+
 .features-2 .feature-item .feature-content h3 {
   font-size: 20px;
   font-weight: 600;
@@ -1917,7 +1940,36 @@ partie qui fait le icone-1-1 - 4-4 soit responsive
   padding: 30px;
   border-radius: 1.5%;
   position: relative;
+  overflow: hidden;
   height: 100%;
+}
+
+.testimonials .testimonial-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 170, 255, 0.2), transparent 90%);
+  filter: blur(60px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+
+.testimonials .testimonial-item .quote-bg {
+  position: absolute;
+  opacity: 0.08;
+  width: 54%;
+  height: 300px;
+  right: 17px;
+  top: 22%;
+  pointer-events: none;
+}
+
+/* responsive pour les écrans de téléphone */
+@media(max-width:553px) {
+  .testimonials .testimonial-item .quote-bg {
+    width: 70%;
+  }
 }
 
 .testimonials .testimonial-item .testimonial-img {
@@ -2315,9 +2367,26 @@ partie qui fait le icone-1-1 - 4-4 soit responsive
 
 .faq .faq-container .faq-item .faq-content p {
   text-align: justify;
+  hyphens: auto;
   margin-bottom: 0;
   overflow: hidden;
+  font-size: 14px;
 }
+
+/* parti qui rend la page responsive */
+@media (max-width:449px) {
+  .faq .faq-container .faq-item .faq-content p {
+    text-align: justify;
+    hyphens: auto;
+    font-size: 13px;
+  }
+
+  .faq .faq-container .faq-item h3 {
+    font-size: 16px;
+  }
+}
+
+/* fin de la partie */
 
 .faq .faq-container .faq-item .faq-toggle {
   position: absolute;
@@ -2350,10 +2419,31 @@ partie qui fait le icone-1-1 - 4-4 soit responsive
 }
 
 /*--------------------------------------------------------------
-# Call To Action 2 Section
+# Section Ressource 
 --------------------------------------------------------------*/
 .Ressources {
   padding: 80px 0;
+  position: relative;
+  clip-path: inset(0);
+}
+
+.Ressources img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.Ressources:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 35%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }
 
 .Ressources .container {
@@ -2482,7 +2572,6 @@ la partie qui gère le style du modale ainsi que les button
 /* ------------------------------------------------------------
 la section qui fait que la partie modal soit responsive
 ------------------------------------------------------------- */
-
 @media(max-width:568px) {
   #file-modal-div-2 {
     padding: 3%;
@@ -2680,6 +2769,83 @@ la section qui fait que la partie modal soit responsive
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 }
 
+/* l'icône loader */
+
+#loader {
+  display: none;
+  backdrop-filter: blur(0.5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* image responsive plus rotation de icône loader */
+
+.loader-img {
+  width: clamp(60px, 10vw, 85px);
+  max-width: 40vw;
+  animation: spin 0.7s linear infinite;
+}
+
+/* responsive du loader */
+
+@media (min-width: 1200px) {
+  #loader {
+    background: rgba(0, 0, 0, 0.14);
+  }
+}
+
+/* fin du responsive */
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* notification qui aprés le loader */
+.notif {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 30px 40px;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  transform: translate(-50%, -50%) scale(0.9);
+  text-align: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* qui gère la visibilité */
+.notif.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* les type de notification */
+.notif.success {
+  background: #28a746da;
+}
+
+.notif.error {
+  background: #dc3546dc;
+}
+
+/* caché */
+.hidden {
+  display: none;
+}
+
+/* fin de l'icône loader et notification */
 @media (max-width: 992px) {
   .contact .contact-form {
     padding: 1.5rem;
@@ -2742,7 +2908,6 @@ la section qui fait que la partie modal soit responsive
 /*--------------------------------------------------------------
 # Section Details
 --------------------------------------------------------------*/
-
 .section-details .section-box {
   background-color: var(--surface-color);
   padding: 20px;
@@ -2951,11 +3116,13 @@ Responsive design de .services-img
   margin-bottom: 15px;
   border-radius: 10px;
   overflow: hidden;
+  font-size: 14px;
 }
 
 .partie h4 {
   color: var(--accent-color-2);
   font-weight: 600;
+  font-size: 17px;
 
 }
 
@@ -2969,10 +3136,12 @@ Responsive design de .services-img
   .partie {
     text-align: justify;
     hyphens: auto;
+    font-size: 13px;
   }
 
   .partie h4 {
     text-align: center;
+    font-size: 17px;
   }
 
 }
