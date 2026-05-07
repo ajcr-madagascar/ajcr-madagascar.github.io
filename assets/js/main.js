@@ -226,20 +226,6 @@ document.querySelectorAll('[data-bs-toggle="tab"]').forEach(link => {
       document.querySelector(targetExtra); if (extraDiv) extraDiv.classList.remove('d-none');
   });
 });
-
-/* apparition et disparition de la section modal */
-/* const bi_x = document.getElementsByClassName('bi-x');
-const bi_list = document.getElementsByClassName('bi-list');
-const adhérer = document.getElementsById('btn-adhérer');
-if (document.getElementById('btn-adhérer')) {
-  bi_list.addEventListener('click', () => {
-    adhérer.style.display = 'none'; // Affiche la modale
-  });
-  bi_x.addEventListener('click', () => {
-    adhérer.style.display = 'block'; // ferme la modale
-  });
-}
- */
 /* dans la page section celui qui gére swiper */
 const swiper = new Swiper('.swiper', { autoplay: { delay: 3000, }, loop: true, });
 /* le code quie gére le fais que le site devient une app ( écran d'accueil) */
