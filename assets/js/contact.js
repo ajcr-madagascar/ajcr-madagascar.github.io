@@ -46,6 +46,7 @@ form.addEventListener("submit", async (e) => {
   const start = Date.now();
 
   try {
+<<<<<<< HEAD
     const res = await fetch("https://mon-serveur-production-8d65.up.railway.app/contact", {
       method: "POST",
       headers: {
@@ -81,4 +82,13 @@ form.addEventListener("submit", async (e) => {
     loader.style.display = "none";
     button.disabled = false;
   }
+=======
+    const response = await fetch("https://mon-serveur-production-8d65.up.railway.app/contact",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }); const text = await response.text(); alert(text);
+  } catch (error) { alert("Erreur serveur"); }
+>>>>>>> 6974cd79a0acb7f50c6870639380229df3b91d5f
 });
