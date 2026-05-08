@@ -1,7 +1,6 @@
 /* 
-name: Association des Jeunes Citoyens Responsables 
+name: Association des Jeunes Citoyens Responsables
 */
-
 const loader = document.getElementById("loader");
 const notif = document.getElementById("notification");
 const form = document.querySelector("form");
@@ -76,7 +75,7 @@ form.addEventListener("submit", async (e) => {
       await new Promise(r => setTimeout(r, 3000 - elapsed));
     }
 
-    showNotification(err.message, "error");
+    showNotification("Erreur lors de l'envoi", "error");
 
   } finally {
     loader.style.display = "none";
