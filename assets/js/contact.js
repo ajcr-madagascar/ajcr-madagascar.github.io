@@ -47,7 +47,7 @@ form.addEventListener("submit", async (e) => {
   const start = Date.now();
 
   try {
-    const res = await fetch("https://mon-serveur-production-8d65.up.railway.app/contact", {
+    const res = await fetch("https://mon-serveur-production-0be0.up.railway.app/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
