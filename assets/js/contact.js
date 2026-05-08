@@ -55,7 +55,7 @@ form.addEventListener("submit", async (e) => {
       body: JSON.stringify(data)
     });
 
-    const text = await res.text();
+    const result = await res.json();
 
     // délais de 3s avant l'apparition du message 
     const elapsed = Date.now() - start;
@@ -63,7 +63,7 @@ form.addEventListener("submit", async (e) => {
       await new Promise(r => setTimeout(r, 3000 - elapsed));
     }
 
-    if (!res.ok) throw new Error(text);
+    if (!res.ok) throw new Error(result.error || "Erreur inconnue");
 
     showNotification("Message envoyé avec succès", "success");
     form.reset();
