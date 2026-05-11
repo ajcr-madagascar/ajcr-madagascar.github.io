@@ -574,6 +574,10 @@ h6 {
   margin-bottom: 5px;
 }
 
+.footer .footer-contact a {
+  color: rgba(0, 0, 0, 0.792);
+}
+
 .footer .copyright {
   text-align: center;
   padding: 25px 0;
